@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IconLoader2 } from "@tabler/icons-react";
+import { Icon360View, IconLoader2 } from "@tabler/icons-react";
 
 export const ButtonIcon = ({
   size,
   appearance,
   label,
   icon,
+  border,
   disabled,
   processing,
   ...props
@@ -56,7 +57,9 @@ export const ButtonIcon = ({
   return (
     <button
       type="button"
-      className={`flex select-none items-center justify-center rounded-md border bg-white p-2 font-medium outline-offset-4 outline-black focus:outline-2 ${buttonAppearance(
+      className={`flex select-none items-center justify-center rounded-md ${
+        border ? "border bg-white p-2" : ""
+      } outline-offset-4 outline-black focus:outline-2 ${buttonAppearance(
         appearance
       )}`}
       disabled={disabled || processing}
@@ -67,7 +70,9 @@ export const ButtonIcon = ({
           className={`${iconSize(size)} animate-spin motion-reduce:hidden`}
         />
       ) : (
-        <div className={`${iconSize(size)}`}>{icon}</div>
+        <div className={`${iconSize(size)}`}>
+          <Icon360View className="h-full w-full" />
+        </div>
       )}
     </button>
   );
@@ -82,6 +87,7 @@ ButtonIcon.propTypes = {
     "danger",
   ]),
   size: PropTypes.oneOf(["sm", "md", "lg"]),
+  border: PropTypes.bool,
   disabled: PropTypes.bool,
   processing: PropTypes.bool,
   onClick: PropTypes.func,
@@ -89,6 +95,7 @@ ButtonIcon.propTypes = {
 
 ButtonIcon.defaultProps = {
   size: "md",
+  border: true,
   disabled: false,
   processing: false,
   onClick: undefined,

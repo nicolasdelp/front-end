@@ -17,6 +17,15 @@ export const Default = {
   },
 };
 
+export const WithoutBorder = {
+  args: {
+    size: "md",
+    appearance: "default",
+    border: false,
+    onClick: undefined,
+  },
+};
+
 export const Success = {
   args: {
     size: "md",
