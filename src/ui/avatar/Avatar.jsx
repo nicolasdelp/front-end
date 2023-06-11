@@ -63,5 +63,4 @@ Avatar.propTypes = {
 Avatar.defaultProps = {
   last_name: "Doe",
   first_name: "John",
-  status: 3,
 };

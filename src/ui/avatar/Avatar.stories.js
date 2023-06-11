@@ -17,6 +17,14 @@ export const WithoutImg = {
   },
 };
 
+export const WithoutStatus = {
+  args: {
+    url: "https://github.com/nicolasdelp.png",
+    last_name: "Doe",
+    first_name: "John",
+  },
+};
+
 export const Offline = {
   args: {
     url: "https://github.com/nicolasdelp.png",
