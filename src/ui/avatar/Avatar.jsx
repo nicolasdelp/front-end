@@ -65,7 +65,7 @@ export const Avatar = ({
     return (
       <div className="relative">
         <img
-          className={`${imgSize(size)} rounded-full`}
+          className={`${imgSize(size)} rounded-full border-2 border-white`}
           src={url}
           alt={last_name + " " + first_name}
         />
@@ -84,7 +84,7 @@ export const Avatar = ({
         <div
           className={`relative inline-flex ${imgSize(
             size
-          )} items-center justify-center overflow-hidden rounded-full bg-gray-100`}
+          )} items-center justify-center overflow-hidden rounded-full border-2 border-white bg-gray-100`}
         >
           <span className={`${textSize(size)} font-semibold text-gray-600`}>
             {last_name.toUpperCase().charAt(0) +
