@@ -17,11 +17,11 @@ export const Default = {
   },
 };
 
-export const WithoutBorder = {
+export const WithBorder = {
   args: {
     size: "md",
     appearance: "default",
-    border: false,
+    border: true,
     onClick: undefined,
   },
 };

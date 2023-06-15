@@ -28,27 +28,27 @@ export const ButtonIcon = ({
   function buttonAppearance(appearance) {
     switch (appearance) {
       case "default":
-        return `!text-black enabled:hover:bg-gray-100 enabled:active:bg-gray-200 ${
+        return `!text-black ${!border ? "enabled:hover:!text-gray-900" : ""} ${
           processing ? "" : "disabled:!text-gray-400"
         }`;
       case "success":
-        return `!text-green-600 enabled:hover:bg-green-50 enabled:active:bg-green-100 ${
-          processing ? "" : "disabled:!text-gray-400"
-        }`;
+        return `!text-green-600 ${
+          !border ? "enabled:hover:!text-green-700" : ""
+        } ${processing ? "" : "disabled:!text-gray-400"}`;
       case "info":
-        return `!text-blue-600 enabled:hover:bg-blue-50 enabled:active:bg-blue-100 ${
-          processing ? "" : "disabled:!text-gray-400"
-        }`;
+        return `!text-blue-600 ${
+          !border ? "enabled:hover:!text-blue-700" : ""
+        } ${processing ? "" : "disabled:!text-gray-400"}`;
       case "warning":
-        return `!text-orange-600 enabled:hover:bg-orange-50 enabled:active:bg-orange-100 ${
-          processing ? "" : "disabled:!text-gray-400"
-        }`;
+        return `!text-orange-600 ${
+          !border ? "enabled:hover:!text-orange-700" : ""
+        } ${processing ? "" : "disabled:!text-gray-400"}`;
       case "danger":
-        return `!text-red-600 enabled:hover:bg-red-50 enabled:active:bg-red-100 ${
+        return `!text-red-600 ${!border ? "enabled:hover:!text-red-700" : ""} ${
           processing ? "" : "disabled:!text-gray-400"
         }`;
       default:
-        return `!text-black enabled:hover:bg-gray-100 enabled:active:bg-gray-200 ${
+        return `!text-black ${!border ? "enabled:hover:!text-gray-900" : ""} ${
           processing ? "" : "disabled:!text-gray-400"
         }`;
     }
@@ -58,7 +58,9 @@ export const ButtonIcon = ({
     <button
       type="button"
       className={`flex select-none items-center justify-center rounded-md ${
-        border ? "border bg-white p-2" : ""
+        border
+          ? "border bg-white p-2 enabled:hover:bg-gray-50 enabled:active:bg-gray-100"
+          : ""
       } outline-offset-4 outline-black focus:outline-2 ${buttonAppearance(
         appearance
       )}`}
@@ -95,7 +97,7 @@ ButtonIcon.propTypes = {
 
 ButtonIcon.defaultProps = {
   size: "md",
-  border: true,
+  border: false,
   disabled: false,
   processing: false,
   onClick: undefined,
