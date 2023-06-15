@@ -40,7 +40,7 @@ export const Button = ({
   function buttonAppearance(appearance) {
     switch (appearance) {
       case "primary":
-        return `text-white bg-[#222222] enabled:hover:bg-[#000000] enabled:active:bg-[#222222] ${
+        return `text-white bg-[#222222] enabled:hover:bg-black enabled:active:bg-[#222222] ${
           processing
             ? "disabled:!text-white"
             : "disabled:!text-gray-400 disabled:bg-white"
