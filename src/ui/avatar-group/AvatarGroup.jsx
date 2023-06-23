@@ -31,7 +31,7 @@ export const AvatarGroup = ({ users, size, linkMore, ...props }) => {
           className={`z-10 flex ${moreSize(
             size
           )} select-none items-center justify-center rounded-full border-2 border-white bg-gray-100 font-medium text-gray-600 ${
-            linkMore ? "hover:bg-gray-300" : ""
+            linkMore ? "hover:bg-gray-300" : "cursor-default"
           }`}
           href={linkMore}
         >
